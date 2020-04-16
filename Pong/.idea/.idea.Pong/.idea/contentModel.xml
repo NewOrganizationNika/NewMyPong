@@ -15,6 +15,7 @@
           <e p="Player.cs" t="Include" />
           <e p="TestScripts.cs" t="Include" />
           <e p="UIMenu.cs" t="Include" />
+          <e p="UIPlayerVsNPC.cs" t="Include" />
           <e p="UISkinChanger.cs" t="Include" />
         </e>
       </e>

@@ -1,9 +1,8 @@
-﻿#pragma warning disable CS0649
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject menu, shop, scoreCanvas;
+    [SerializeField] private GameObject menu = null, shop = null, scoreCanvas = null, playerVsNPC = null;
 
     public void StartPlaying()
     {
@@ -18,10 +17,17 @@ public class UIMenu : MonoBehaviour
         shop.SetActive(true);
     }
 
+    public void ChangePlayMode()
+    {
+        menu.SetActive(false);
+        playerVsNPC.SetActive(true);
+    }
+
     public void MainMenu()
     {
         menu.SetActive(true);
         shop.SetActive(false);
+        playerVsNPC.SetActive(false);
         scoreCanvas.SetActive(false);
     }
 }

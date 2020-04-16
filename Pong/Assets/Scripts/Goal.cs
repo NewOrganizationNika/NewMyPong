@@ -6,11 +6,11 @@ public class Goal : MonoBehaviour
 {
     [SerializeField] private UnityEvent isWinner, onGoal;
     [SerializeField] private Player player;
-    [SerializeField] private UnityEngine.UI.Text score;
-
+    [SerializeField] private UnityEngine.UI.Text scoreText;
+    [SerializeField] private ushort score = 10;
     private void ScoreChange()
     {
-        score.text = player.count.ToString();
+        scoreText.text = player.count.ToString();
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -19,7 +19,7 @@ public class Goal : MonoBehaviour
         player.count++;
         ScoreChange();
         onGoal.Invoke(); //change count and start func of ball
-        if (player.count < 10) return;
+        if (player.count < score) return;
         isWinner.Invoke();
         Ball.IsPlaying = false;
     }
